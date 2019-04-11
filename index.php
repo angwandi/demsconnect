@@ -12,7 +12,7 @@ echo <<<_END
     </div>
     <div data-role="footer">
       <h4>Web App Development <i><a href='https://2ms-apps.business.site/'
-      target='_blank'>2ms Apps</a></i></h4>
+      target='_blank' style="color: #1d20e9">2msApps</a></i></h4>
     </div>
   </body>
 </html>
