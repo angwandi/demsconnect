@@ -1,6 +1,6 @@
 <?php // header.php
 //setting up a session that will remember certain values i want to store across different PHP files.
-  session_start();
+session_start();
 
 echo <<<_INIT
 <!DOCTYPE html> 
@@ -16,17 +16,15 @@ echo <<<_INIT
 
 _INIT;
 
-  require_once 'functions.php';
+require_once 'functions.php';
 
-  $userstr = 'Welcome Guest';
+$userstr = 'Welcome Guest';
 
-  if (isset($_SESSION['user']))
-  {
-    $user     = $_SESSION['user'];
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
     $loggedin = TRUE;
-    $userstr  = "Logged in as: $user";
-  }
-  else $loggedin = FALSE;
+    $userstr = "Logged in as: $user";
+} else $loggedin = FALSE;
 
 echo <<<_MAIN
     <title>2ms Connect: $userstr</title>
@@ -34,16 +32,15 @@ echo <<<_MAIN
   <body>
     <div data-role='page'>
       <div data-role='header'>
-        <div id='logo' class='center'>R<img id='robin' src='robin.gif'>2ms Connect</div>
+        <div id='logo' class='center'>2ms Connect</div>
         <div class='username'>$userstr</div>
       </div>
       <div data-role='content'>
 
 _MAIN;
 
-  if ($loggedin)
-  {
-echo <<<_LOGGEDIN
+if ($loggedin) {
+    echo <<<_LOGGEDIN
         <div class='center'>
           <a data-role='button' data-inline='true' data-icon='home'
             data-transition="slide" href='members.php?view=$user'>Home</a>
@@ -60,10 +57,8 @@ echo <<<_LOGGEDIN
         </div>
         
 _LOGGEDIN;
-  }
-  else
-  {
-echo <<<_GUEST
+} else {
+    echo <<<_GUEST
         <div class='center'>
           <a data-role='button' data-inline='true' data-icon='home'
             data-transition='slide' href='index.php'>Home</a>
@@ -75,5 +70,5 @@ echo <<<_GUEST
         <p class='info'>(You must be logged in to use this app)</p>
         
 _GUEST;
-  }
+}
 ?>
